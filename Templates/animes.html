@@ -1,0 +1,22 @@
+{%  extends 'base.html' %}
+{% block title %} Home page {%  endblock %}
+
+{% block content %}
+<br>
+<h3>სიაში დამატება</h3>
+    <form method="post" style="width:50%; margin-left: 10px">
+      <div class="form-group">
+        <input type="text" name="rank" class="form-control" placeholder="Ranking"><br>
+        <input type="text" name="title" class="form-control" placeholder="Anime Title"><br>
+         <input type="text" name="rating" class="form-control"  placeholder="Rating"><br>
+      </div>
+
+        {% with messages=get_flashed_messages(with_categories=true) %}
+            {% for catg, msg in messages %}
+                <p class="{{catg}}">{{msg}}</p>
+            {% endfor %}
+        {% endwith %}
+
+    <button type="submit" class="btn btn-outline-dark mt-3">Add Anime</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Favorites {{ session['username'] }}</h2>
+
+    {% for i in animes %}
+        <p>ანიმე: {{ i }}</p>
+        {% if i=='Fullmetal Alchemist: Brotherhood' %}
+            <p>რეიტინგი: 9.1</p>
+        {% elif i=='Death Note'%}
+            <p>რეიტინგი: 9.0</p>
+        {% elif i=='Attack On Titan'%}
+            <p>რეიტინგი: 9.0</p>
+        {% elif i=='Hunter X Hunter'%}
+            <p>რეიტინგი: 9.0</p>
+        {% elif i=='Samurai Champloo'%}
+            <p>რეიტინგი: 8.5</p>
+        {% elif i=='Naruto'%}
+            <p>რეიტინგი: 8.3</p>
+        {% else %}
+            <p>რეიტინგი: 7.9</p>
+        {% endif %}
+    {% endfor %}
+
+<a href="{{url_for('books')}}"> სიის შეცვლა </a>
+{% endblock %}
